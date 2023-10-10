@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>01-aleatorio</title>
+  </head>
+  <body>
+    <script>
+      const numeroAleatorio = (maximo) => {
+        return Math.round(Math.random() * maximo);
+      };
+      let loteria = [];
+
+      for (let i = 0; i < 10; i++) {
+        const maximo = 99999;
+        loteria.push(numeroAleatorio(maximo));
+        let resultado = document.createElement("div");
+        let resultado_contenido = document.createTextNode(
+          i+1 + "º número de lotería: " + loteria[i]
+        );
+        resultado.appendChild(resultado_contenido);
+        let currentDive = document.getElementById("div");
+        document.body.insertBefore(resultado, currentDive);
+      }
+    </script>
+  </body>
+</html>
