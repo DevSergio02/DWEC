@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>01-coordenadas-raton</title>
+  </head>
+  <body>
+    <label for="x">X: </label>
+    <input id="x" name="x" type="text" />
+
+    <label for="y">Y: </label>
+    <input id="y" name="y" type="text" />
+    <script>
+      const inputX = document.querySelector("#x");
+      const inputY = document.querySelector("#y");
+      addEventListener("mousemove", (e) => {
+        console.log(e);
+        console.log(`X: ${e.pageX}, Y:${e.pagey}`);
+        inputX.value = e.pageX;
+        inputY.value = e.pageY;
+      });
+    </script>
+  </body>
+</html>
